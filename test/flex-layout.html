@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>layout test</title>
+    <link rel="stylesheet" href="../resources/css/basic.css">
+    <style>
+        .holder {
+            float: left;
+            border: 1px solid black;
+        }
+
+        .test-block {
+            margin: 20px;
+            height: 50px;
+            width: 50px;
+            background-color: cornflowerblue;
+        }
+
+        hr {
+            margin: 20px 0;
+        }
+
+        .single-item .holder {
+            width: 250px;
+            height: 250px;
+        }
+
+        .multiple-item.single-line .holder {
+            width: 700px;
+            height: 200px;
+        }
+
+        .multiple-item.multiple-line .holder {
+            width: 400px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+<div class="single-item clear-fix">
+    <div class="holder flex-wpr main-start cross-start">
+        <div class="test-block"></div>
+    </div>
+    <div class="holder flex-wpr cross-start">
+        <div class="test-block"></div>
+    </div>
+    <div class="holder flex-wpr main-end cross-start">
+        <div class="test-block"></div>
+    </div>
+    <div class="holder flex-wpr main-start">
+        <div class="test-block"></div>
+    </div>
+    <div class="holder flex-wpr">
+        <div class="test-block"></div>
+    </div>
+    <div class="holder flex-wpr main-end">
+        <div class="test-block"></div>
+    </div>
+    <div class="holder flex-wpr main-start cross-end">
+        <div class="test-block"></div>
+    </div>
+    <div class="holder flex-wpr cross-end">
+        <div class="test-block"></div>
+    </div>
+    <div class="holder flex-wpr main-end cross-end">
+        <div class="test-block"></div>
+    </div>
+</div>
+
+<hr>
+
+<div class="multiple-item single-line clear-fix">
+    <div class="holder flex-wpr">
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+    </div>
+    <div class="holder flex-wpr main-start">
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+    </div>
+    <div class="holder flex-wpr main-end">
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+    </div>
+    <div class="holder flex-wpr around">
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+    </div>
+    <div class="holder flex-wpr justify">
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+    </div>
+    <div class="holder flex-wpr cross-start">
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+    </div>
+    <div class="holder flex-wpr cross-end">
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+    </div>
+    <div class="holder flex-wpr">
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block flex-fill"></div>
+        <div class="test-block"></div>
+    </div>
+</div>
+
+<hr>
+
+<div class="multiple-item multiple-line clear-fix">
+    <div class="holder flex-wpr">
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+    </div>
+    <div class="holder flex-wpr justify">
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+    </div>
+    <div class="holder flex-wpr main-start">
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+    </div>
+    <div class="holder flex-wpr main-end">
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+    </div>
+    <div class="holder flex-wpr cross-start-mul">
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+    </div>
+    <div class="holder flex-wpr cross-end-mul">
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+        <div class="test-block"></div>
+    </div>
+</div>
+</body>
+</html>

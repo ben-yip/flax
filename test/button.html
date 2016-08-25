@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Button</title>
+    <link rel="stylesheet" href="../resources/css/basic.css">
+    <style>
+        body {
+            margin: 30px;
+        }
+
+        .btn {
+            margin-bottom: 10px;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 10px;
+        }
+
+        hr {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <button class="btn">Button</button>
+    <a class="btn" href="#">Anchor</a>
+    <input class="btn" type="button" value="Input button">
+    <input class="btn" type="submit" value="Submit">
+    <input class="btn" type="reset" value="Reset">
+</div>
+<div>
+    <button class="btn btn-rounded">Rounded corner</button>
+    <button class="btn btn-dotted">Dotted border</button>
+    <button class="btn btn-dashed">Dashed border</button>
+</div>
+<div>
+    <button class="btn btn-rounded btn-lg">Large</button>
+    <button class="btn btn-rounded">Default</button>
+    <button class="btn btn-rounded btn-sm">Small</button>
+    <button class="btn btn-rounded btn-xs">Extra small</button>
+</div>
+<div>
+    <button class="btn btn-rounded btn-default">Default</button>
+    <button class="btn btn-rounded btn-inverse">Inverse</button>
+    <button class="btn btn-rounded btn-red">Red</button>
+    <button class="btn btn-rounded btn-yellow">Yellow</button>
+    <button class="btn btn-rounded btn-blue">Blue</button>
+    <button class="btn btn-rounded btn-green">Green</button>
+    <button class="btn btn-rounded btn-purple">Purple</button>
+</div>
+<div>
+    <button class="btn btn-rounded btn-sm btn-blue">rounded small blue</button>
+    <button class="btn btn-rounded btn-xs btn-green">rounded extraSmall green</button>
+</div>
+
+<hr>
+
+<div>
+    <h1>不同类型元素尺寸一致性检查</h1>
+    <h2>（对于&lt;input&gt;，只适用于type="button|submit|reset"）</h2>
+    <div>
+        <h3>水平摆放</h3>
+        <button class="btn">Button</button>
+        <a class="btn" href="#">Button</a>
+        <input class="btn" type="button" value="Button">
+        <input class="btn" type="submit" value="Button">
+    </div>
+    <div>
+        <h3>垂直摆放</h3>
+        <button class="btn">Button</button>
+        <br>
+        <a class="btn" href="#">Button</a>
+        <br>
+        <input class="btn" type="button" value="Button">
+        <br>
+        <input class="btn" type="submit" value="Button">
+    </div>
+</div>
+
+</body>
+</html>

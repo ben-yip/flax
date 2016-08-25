@@ -1,0 +1,412 @@
+@charset "UTF-8";
+
+/*==================== fonts ==========================*/
+@font-face {
+    font-family: 'robotoregular';
+    src: url('../font/roboto-regular/roboto-regular-webfont.eot');
+    src: url('../font/roboto-regular/roboto-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/roboto-regular/roboto-regular-webfont.woff2') format('woff2'),
+    url('../font/roboto-regular/roboto-regular-webfont.woff') format('woff'),
+    url('../font/roboto-regular/roboto-regular-webfont.ttf') format('truetype'),
+    url('../font/roboto-regular/roboto-regular-webfont.svg#robotoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*==================== basic layout ==========================*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    box-sizing: border-box;
+    min-height: 100vh;
+    background-color: #fff;
+    font-size: 14px;
+    font-family: "Microsoft YaHei", "Microsoft YaHei UI", "微软雅黑", "robotoregular", "Times New Roman", sans-serif;
+}
+
+body {
+    min-width: 1280px;
+    /*overflow-x: hidden;*/
+}
+
+.container {
+    width: 100%;
+}
+
+.container .content {
+    position: relative;
+    margin: 0 auto;
+    width: 1280px;
+}
+
+/*============================ common element styles =======================*/
+a {
+    text-decoration: none;
+    color: #717171;
+    transition: all .3s;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #40a1d2;
+    transition: all .3s;
+}
+
+/*================================================================================*/
+/*================================= Layouts ======================================*/
+/*================================================================================*/
+
+/*------------ flex layout --------------*/
+
+/*
+    默认在垂直和水平方向上居中，提供多个类用以覆盖定位项目方向
+*/
+.flex-wpr {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.flex-wpr.nowrap {
+    flex-flow: nowrap;
+}
+
+.flex-wpr.column {
+    flex-direction: column;
+}
+
+.flex-wpr.justify {
+    justify-content: space-between;
+}
+
+.flex-wpr.around {
+    justify-content: space-around;
+}
+
+.flex-wpr.main-start {
+    justify-content: flex-start;
+}
+
+.flex-wpr.main-end {
+    justify-content: flex-end;
+}
+
+.flex-wpr.cross-start {
+    align-items: flex-start;
+}
+
+.flex-wpr.cross-end {
+    align-items: flex-end;
+}
+
+.flex-wpr.cross-start-mul {
+    align-content: flex-start;
+}
+
+.flex-wpr.cross-end-mul {
+    align-content: flex-end;
+}
+
+.flex-wpr.cross-stretch {
+    align-items: stretch;
+}
+
+.flex-wpr > * {
+    display: block;
+}
+
+/*todo
+    这个是不是应该命名为auto
+    使用场景是容器内已经有若干个固定尺寸的项目，
+    应用这个类的项目将在容器内剩余的空间中自动缩放。
+*/
+.flex-wpr .flex-fill {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+/*----------------------！以下未测试 ！---------------------------*/
+/*项目的缩放，可应用在容器上设置所有项目，也可应用在单个容器中*/
+.flex-wpr.no-shrink > * {
+    flex-shrink: 0;
+}
+
+.flex-wpr .no-shrink {
+    flex-shrink: 0;
+}
+
+.flex-wpr.no-grow > * {
+    flex-grow: 0;
+}
+
+.flex-wpr .no-grow {
+    flex-grow: 0;
+}
+
+.flex-wpr.grow-all > * {
+    flex-grow: 1;
+}
+
+.flex-wpr .grow-self {
+    flex-grow: 1;
+}
+
+/*----------- other layout tools -------------------*/
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.clear-fix::before,
+.clear-fix::after {
+    display: block;
+    height: 0;
+    line-height: 0;
+    content: '';
+    clear: both;
+}
+
+.clear { /*for those does NOT support ::before*/
+    display: block;
+    clear: both;
+    height: 0;
+    overflow: hidden;
+}
+
+.full-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+/*---------- fast tools ----------*/
+
+.text-bold {
+    font-weight: bold !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+/*================================================================================*/
+/*============================ Common elements ===================================*/
+/*================================================================================*/
+
+/*================= table =======================*/
+.table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+.table thead th {
+    font-weight: bold;
+}
+
+.table tr {
+    padding: 0 10px;
+}
+
+.table th,
+.table td {
+    padding: 8px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.table.table-bordered th,
+.table.table-bordered td {
+    border: 1px solid #ddd;
+}
+
+.table.table-striped tbody tr:nth-child(2n-1) {
+    background-color: #f0f0f0;
+}
+
+.table.table-condensed th,
+.table.table-condensed td {
+    padding: 5px;
+}
+
+.table.table-hover tbody tr:hover {
+    background-color: #f0f0f0;
+}
+
+.table.table-text-left th,
+.table.table-text-left td {
+    text-align: left;
+}
+
+/*================== button =======================*/
+.btn {
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 5px 12px;
+    outline: 0 none;
+    text-align: center;
+    text-indent: 0;
+    font-size: 14px;
+    font-weight: normal;
+    white-space: nowrap;
+    font-family: inherit;
+    border: 1px solid #ccc;
+    color: #333;
+    background-color: white;
+    cursor: pointer;
+    transition: all .25s;
+}
+
+.btn:focus,
+.btn:hover {
+    color: #333;
+    border-color: #8c8c8c;
+    transition: all .25s;
+}
+
+/*----------- style ----------*/
+.btn-rounded {
+    border-radius: 4px;
+}
+
+.btn-dotted {
+    border-style: dotted;
+}
+
+.btn-dashed {
+    border-style: dashed;
+}
+
+/*----------- size -----------*/
+.btn-lg {
+    padding: 7px 16px;
+    font-size: 18px;
+}
+
+.btn-lg.btn-rounded {
+    border-radius: 6px;
+}
+
+.btn-sm {
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.btn-sm.btn-rounded {
+    border-radius: 3px;
+}
+
+.btn-xs {
+    padding: 1px 5px;
+    font-size: 12px;
+}
+
+.btn-xs.btn-rounded {
+    border-radius: 3px;
+}
+
+/*----------- color -----------*/
+.btn-default:focus,
+.btn-default:hover {
+    border-color: #8c8c8c;
+    background-color: #e6e6e6;
+}
+
+.btn-inverse:focus,
+.btn-inverse:hover {
+    color: #fefefe;
+    background-color: #444;
+    border-color: #555;
+}
+
+.btn-red {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+
+.btn-red:focus,
+.btn-red:hover {
+    color: #fff;
+    background-color: #c9302c;
+    border-color: #ac2925;
+}
+
+.btn-yellow {
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #eea236;
+}
+
+.btn-yellow:focus,
+.btn-yellow:hover {
+    color: #fff;
+    background-color: #ec971f;
+    border-color: #d58512;
+}
+
+.btn-blue {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+
+.btn-blue:focus,
+.btn-blue:hover {
+    color: #fff;
+    background-color: #286090;
+    border-color: #204d74;
+}
+
+.btn-green {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+.btn-green:focus,
+.btn-green:hover {
+    color: #fff;
+    background-color: #449d44;
+    border-color: #398439;
+}
+
+.btn-purple {
+    color: #fff;
+    background-color: #9d75e6;
+    border-color: #9168de;
+}
+
+.btn-purple:focus,
+.btn-purple:hover {
+    color: #fff;
+    background-color: #8c63d7;
+    border-color: #7e5ac1;
+}
+
+/*=============================*/
+
+/*====================================================================*/
+/*========================  COMPONENTS ===============================*/
+/*====================================================================*/
+
+/*============= Pager =============*/
+.pager {
+
+}
+
+/*=============================*/
