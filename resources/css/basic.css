@@ -14,13 +14,13 @@
 }
 
 /*==================== basic layout ==========================*/
-* {
-    margin: 0;
-    padding: 0;
-}
+/** {*/
+/*margin: 0;*/
+/*padding: 0;*/
+/*}*/
 
 html, body {
-    box-sizing: border-box;
+    /*box-sizing: border-box;*/
     min-height: 100vh;
     background-color: #fff;
     font-size: 14px;
@@ -28,8 +28,9 @@ html, body {
 }
 
 body {
-    min-width: 1280px;
-    /*overflow-x: hidden;*/
+    /*min-width: 1280px;*/
+    min-width: 1000px;
+    overflow-x: hidden;
 }
 
 .container {
@@ -46,13 +47,13 @@ body {
 a {
     text-decoration: none;
     color: #717171;
-    transition: all .3s;
+    transition: color .3s;
 }
 
 a:hover {
     text-decoration: none;
     color: #40a1d2;
-    transition: all .3s;
+    transition: color .3s;
 }
 
 /*================================================================================*/
@@ -156,7 +157,7 @@ a:hover {
     flex-grow: 1;
 }
 
-/*----------- other layout tools -------------------*/
+/*-----------------------------------------------------------------*/
 
 .pull-left {
     float: left;
@@ -201,6 +202,10 @@ a:hover {
     text-align: center !important;
 }
 
+.text-right {
+    text-align: right !important;
+}
+
 /*================================================================================*/
 /*============================ Common elements ===================================*/
 /*================================================================================*/
@@ -210,6 +215,11 @@ a:hover {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
+}
+
+.table.table-inline {
+    display: inline-table;
+    width: auto;
 }
 
 .table thead th {
@@ -231,6 +241,11 @@ a:hover {
 .table.table-bordered th,
 .table.table-bordered td {
     border: 1px solid #ddd;
+}
+
+.table.table-no-border th,
+.table.table-no-border td {
+    border: none 0;
 }
 
 .table.table-striped tbody tr:nth-child(2n-1) {
@@ -398,7 +413,78 @@ a:hover {
     border-color: #7e5ac1;
 }
 
-/*=============================*/
+/*================= 警告框 ========================*/
+.alert {
+    box-sizing: border-box;
+    display: block;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px solid #e2e2e2;
+    color: #444;
+    background-color: #f2f2f2;
+}
+
+.alert.alert-proper-margin {
+    margin: 8px;
+}
+
+.alert p {
+    margin: 0;
+}
+
+.alert > p:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.alert.alert-condensed {
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.alert.alert-condensed > p:not(:last-child) {
+    margin-bottom: 3px;
+}
+
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6
+}
+
+.alert-success .alert-link {
+    color: #2b542c
+}
+
+.alert-info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1
+}
+
+.alert-info .alert-link {
+    color: #245269
+}
+
+.alert-warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc
+}
+
+.alert-warning .alert-link {
+    color: #66512c
+}
+
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1
+}
+
+.alert-danger .alert-link {
+    color: #843534
+}
 
 /*====================================================================*/
 /*========================  COMPONENTS ===============================*/
