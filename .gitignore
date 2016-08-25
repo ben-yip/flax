@@ -45,3 +45,6 @@ jspm_packages
 #*.iml
 out
 gen
+
+## Sass cache
+learnSass/.sass-cache
