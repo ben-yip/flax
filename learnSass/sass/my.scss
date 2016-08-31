@@ -5,20 +5,5 @@
 @import "compass/layout";
 @import "compass";
 
-@import "compass/utilities/color/brightness";
+@import "icons";
 
-//#my-list {
-//  @include inline-block-list(10px);
-//}
-//
-//.text-squish{
-//  @include squish-text;
-//}
-
-#img-test {
-  background-image: image_url('leaf.jpg');
-}
-
-//@include font-face("roboto", font_files("roboto-regular-webfont.eot"));
-
-@debug brightness(#000);

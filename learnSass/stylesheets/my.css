@@ -266,7 +266,71 @@ th {
   padding: 0;
 }
 
-/* line 16, ../sass/my.scss */
-#img-test {
-  background-image: url('../images/leaf.jpg?1469603876');
+/* line 120, icons/*.png */
+.icons-sprite, .icons-button, .icons-cancel, .icons-clear, .icons-cut, .icons-help, .icons-large_chart, .icons-large_picture, .icons-large_shapes, .icons-large_smartart {
+  background-image: url('../images/icons-s7d203073c7.png');
+  background-repeat: no-repeat;
+}
+
+/* line 84, ../../../../ProgramFiles2/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icons-button {
+  background-position: 0 -32px;
+  height: 57px;
+  width: 200px;
+}
+
+/* line 84, ../../../../ProgramFiles2/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icons-cancel {
+  background-position: -32px 0;
+  height: 16px;
+  width: 16px;
+}
+
+/* line 84, ../../../../ProgramFiles2/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icons-clear {
+  background-position: -48px 0;
+  height: 16px;
+  width: 16px;
+}
+
+/* line 84, ../../../../ProgramFiles2/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icons-cut {
+  background-position: -16px 0;
+  height: 16px;
+  width: 16px;
+}
+
+/* line 84, ../../../../ProgramFiles2/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icons-help {
+  background-position: 0 0;
+  height: 16px;
+  width: 16px;
+}
+
+/* line 84, ../../../../ProgramFiles2/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icons-large_chart {
+  background-position: -128px 0;
+  height: 32px;
+  width: 32px;
+}
+
+/* line 84, ../../../../ProgramFiles2/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icons-large_picture {
+  background-position: -96px 0;
+  height: 32px;
+  width: 32px;
+}
+
+/* line 84, ../../../../ProgramFiles2/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icons-large_shapes {
+  background-position: -64px 0;
+  height: 32px;
+  width: 32px;
+}
+
+/* line 84, ../../../../ProgramFiles2/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icons-large_smartart {
+  background-position: -160px 0;
+  height: 32px;
+  width: 32px;
 }

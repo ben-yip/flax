@@ -1,0 +1,321 @@
+@import "compass/utilities/sprites/base";
+
+// General Sprite Defaults
+// You can override them before you import this file.
+$icons-sprite-dimensions : false !default;
+$icons-use-percentages   : false !default;
+$icons-position          : 0% !default;
+$icons-spacing           : 0 !default;
+$icons-repeat            : no-repeat !default;
+$icons-prefix            : '' !default;
+$icons-clean-up          : true !default;
+$icons-layout            : vertical !default;
+$icons-inline            : false !default;
+$icons-sort-by           : 'none' !default;
+$icons-class-separator   : $default-sprite-separator !default;
+$icons-sprite-base-class : ".icons#{$icons-class-separator}sprite" !default;
+
+  
+ // These variables control the generated sprite output
+ // You can override them selectively before you import this file.
+ 
+   $icons-back-position: $icons-position !default;
+   $icons-back-spacing:  $icons-spacing !default;
+   $icons-back-repeat:   $icons-repeat !default;
+ 
+   $icons-cancel-position: $icons-position !default;
+   $icons-cancel-spacing:  $icons-spacing !default;
+   $icons-cancel-repeat:   $icons-repeat !default;
+ 
+   $icons-clear-position: $icons-position !default;
+   $icons-clear-spacing:  $icons-spacing !default;
+   $icons-clear-repeat:   $icons-repeat !default;
+ 
+   $icons-cut-position: $icons-position !default;
+   $icons-cut-spacing:  $icons-spacing !default;
+   $icons-cut-repeat:   $icons-repeat !default;
+ 
+   $icons-edit_add-position: $icons-position !default;
+   $icons-edit_add-spacing:  $icons-spacing !default;
+   $icons-edit_add-repeat:   $icons-repeat !default;
+ 
+   $icons-edit_remove-position: $icons-position !default;
+   $icons-edit_remove-spacing:  $icons-spacing !default;
+   $icons-edit_remove-repeat:   $icons-repeat !default;
+ 
+   $icons-filesave-position: $icons-position !default;
+   $icons-filesave-spacing:  $icons-spacing !default;
+   $icons-filesave-repeat:   $icons-repeat !default;
+ 
+   $icons-filter-position: $icons-position !default;
+   $icons-filter-spacing:  $icons-spacing !default;
+   $icons-filter-repeat:   $icons-repeat !default;
+ 
+   $icons-help-position: $icons-position !default;
+   $icons-help-spacing:  $icons-spacing !default;
+   $icons-help-repeat:   $icons-repeat !default;
+ 
+   $icons-large_chart-position: $icons-position !default;
+   $icons-large_chart-spacing:  $icons-spacing !default;
+   $icons-large_chart-repeat:   $icons-repeat !default;
+ 
+   $icons-large_clipart-position: $icons-position !default;
+   $icons-large_clipart-spacing:  $icons-spacing !default;
+   $icons-large_clipart-repeat:   $icons-repeat !default;
+ 
+   $icons-large_picture-position: $icons-position !default;
+   $icons-large_picture-spacing:  $icons-spacing !default;
+   $icons-large_picture-repeat:   $icons-repeat !default;
+ 
+   $icons-large_shapes-position: $icons-position !default;
+   $icons-large_shapes-spacing:  $icons-spacing !default;
+   $icons-large_shapes-repeat:   $icons-repeat !default;
+ 
+   $icons-large_smartart-position: $icons-position !default;
+   $icons-large_smartart-spacing:  $icons-spacing !default;
+   $icons-large_smartart-repeat:   $icons-repeat !default;
+ 
+   $icons-lock-position: $icons-position !default;
+   $icons-lock-spacing:  $icons-spacing !default;
+   $icons-lock-repeat:   $icons-repeat !default;
+ 
+   $icons-man-position: $icons-position !default;
+   $icons-man-spacing:  $icons-spacing !default;
+   $icons-man-repeat:   $icons-repeat !default;
+ 
+   $icons-mini_add-position: $icons-position !default;
+   $icons-mini_add-spacing:  $icons-spacing !default;
+   $icons-mini_add-repeat:   $icons-repeat !default;
+ 
+   $icons-mini_edit-position: $icons-position !default;
+   $icons-mini_edit-spacing:  $icons-spacing !default;
+   $icons-mini_edit-repeat:   $icons-repeat !default;
+ 
+   $icons-mini_refresh-position: $icons-position !default;
+   $icons-mini_refresh-spacing:  $icons-spacing !default;
+   $icons-mini_refresh-repeat:   $icons-repeat !default;
+ 
+   $icons-more-position: $icons-position !default;
+   $icons-more-spacing:  $icons-spacing !default;
+   $icons-more-repeat:   $icons-repeat !default;
+ 
+   $icons-no-position: $icons-position !default;
+   $icons-no-spacing:  $icons-spacing !default;
+   $icons-no-repeat:   $icons-repeat !default;
+ 
+   $icons-ok-position: $icons-position !default;
+   $icons-ok-spacing:  $icons-spacing !default;
+   $icons-ok-repeat:   $icons-repeat !default;
+ 
+   $icons-pencil-position: $icons-position !default;
+   $icons-pencil-spacing:  $icons-spacing !default;
+   $icons-pencil-repeat:   $icons-repeat !default;
+ 
+   $icons-print-position: $icons-position !default;
+   $icons-print-spacing:  $icons-spacing !default;
+   $icons-print-repeat:   $icons-repeat !default;
+ 
+   $icons-redo-position: $icons-position !default;
+   $icons-redo-spacing:  $icons-spacing !default;
+   $icons-redo-repeat:   $icons-repeat !default;
+ 
+   $icons-reload-position: $icons-position !default;
+   $icons-reload-spacing:  $icons-spacing !default;
+   $icons-reload-repeat:   $icons-repeat !default;
+ 
+   $icons-search-position: $icons-position !default;
+   $icons-search-spacing:  $icons-spacing !default;
+   $icons-search-repeat:   $icons-repeat !default;
+ 
+   $icons-sum-position: $icons-position !default;
+   $icons-sum-spacing:  $icons-spacing !default;
+   $icons-sum-repeat:   $icons-repeat !default;
+ 
+   $icons-tip-position: $icons-position !default;
+   $icons-tip-spacing:  $icons-spacing !default;
+   $icons-tip-repeat:   $icons-repeat !default;
+ 
+   $icons-undo-position: $icons-position !default;
+   $icons-undo-spacing:  $icons-spacing !default;
+   $icons-undo-repeat:   $icons-repeat !default;
+ 
+
+ $icons-sprites: sprite-map("icons/*.png",
+ 
+   $icons-back-position: $icons-back-position, 
+   $icons-back-spacing:  $icons-back-spacing, 
+   $icons-back-repeat:   $icons-back-repeat,
+ 
+   $icons-cancel-position: $icons-cancel-position, 
+   $icons-cancel-spacing:  $icons-cancel-spacing, 
+   $icons-cancel-repeat:   $icons-cancel-repeat,
+ 
+   $icons-clear-position: $icons-clear-position, 
+   $icons-clear-spacing:  $icons-clear-spacing, 
+   $icons-clear-repeat:   $icons-clear-repeat,
+ 
+   $icons-cut-position: $icons-cut-position, 
+   $icons-cut-spacing:  $icons-cut-spacing, 
+   $icons-cut-repeat:   $icons-cut-repeat,
+ 
+   $icons-edit_add-position: $icons-edit_add-position, 
+   $icons-edit_add-spacing:  $icons-edit_add-spacing, 
+   $icons-edit_add-repeat:   $icons-edit_add-repeat,
+ 
+   $icons-edit_remove-position: $icons-edit_remove-position, 
+   $icons-edit_remove-spacing:  $icons-edit_remove-spacing, 
+   $icons-edit_remove-repeat:   $icons-edit_remove-repeat,
+ 
+   $icons-filesave-position: $icons-filesave-position, 
+   $icons-filesave-spacing:  $icons-filesave-spacing, 
+   $icons-filesave-repeat:   $icons-filesave-repeat,
+ 
+   $icons-filter-position: $icons-filter-position, 
+   $icons-filter-spacing:  $icons-filter-spacing, 
+   $icons-filter-repeat:   $icons-filter-repeat,
+ 
+   $icons-help-position: $icons-help-position, 
+   $icons-help-spacing:  $icons-help-spacing, 
+   $icons-help-repeat:   $icons-help-repeat,
+ 
+   $icons-large_chart-position: $icons-large_chart-position, 
+   $icons-large_chart-spacing:  $icons-large_chart-spacing, 
+   $icons-large_chart-repeat:   $icons-large_chart-repeat,
+ 
+   $icons-large_clipart-position: $icons-large_clipart-position, 
+   $icons-large_clipart-spacing:  $icons-large_clipart-spacing, 
+   $icons-large_clipart-repeat:   $icons-large_clipart-repeat,
+ 
+   $icons-large_picture-position: $icons-large_picture-position, 
+   $icons-large_picture-spacing:  $icons-large_picture-spacing, 
+   $icons-large_picture-repeat:   $icons-large_picture-repeat,
+ 
+   $icons-large_shapes-position: $icons-large_shapes-position, 
+   $icons-large_shapes-spacing:  $icons-large_shapes-spacing, 
+   $icons-large_shapes-repeat:   $icons-large_shapes-repeat,
+ 
+   $icons-large_smartart-position: $icons-large_smartart-position, 
+   $icons-large_smartart-spacing:  $icons-large_smartart-spacing, 
+   $icons-large_smartart-repeat:   $icons-large_smartart-repeat,
+ 
+   $icons-lock-position: $icons-lock-position, 
+   $icons-lock-spacing:  $icons-lock-spacing, 
+   $icons-lock-repeat:   $icons-lock-repeat,
+ 
+   $icons-man-position: $icons-man-position, 
+   $icons-man-spacing:  $icons-man-spacing, 
+   $icons-man-repeat:   $icons-man-repeat,
+ 
+   $icons-mini_add-position: $icons-mini_add-position, 
+   $icons-mini_add-spacing:  $icons-mini_add-spacing, 
+   $icons-mini_add-repeat:   $icons-mini_add-repeat,
+ 
+   $icons-mini_edit-position: $icons-mini_edit-position, 
+   $icons-mini_edit-spacing:  $icons-mini_edit-spacing, 
+   $icons-mini_edit-repeat:   $icons-mini_edit-repeat,
+ 
+   $icons-mini_refresh-position: $icons-mini_refresh-position, 
+   $icons-mini_refresh-spacing:  $icons-mini_refresh-spacing, 
+   $icons-mini_refresh-repeat:   $icons-mini_refresh-repeat,
+ 
+   $icons-more-position: $icons-more-position, 
+   $icons-more-spacing:  $icons-more-spacing, 
+   $icons-more-repeat:   $icons-more-repeat,
+ 
+   $icons-no-position: $icons-no-position, 
+   $icons-no-spacing:  $icons-no-spacing, 
+   $icons-no-repeat:   $icons-no-repeat,
+ 
+   $icons-ok-position: $icons-ok-position, 
+   $icons-ok-spacing:  $icons-ok-spacing, 
+   $icons-ok-repeat:   $icons-ok-repeat,
+ 
+   $icons-pencil-position: $icons-pencil-position, 
+   $icons-pencil-spacing:  $icons-pencil-spacing, 
+   $icons-pencil-repeat:   $icons-pencil-repeat,
+ 
+   $icons-print-position: $icons-print-position, 
+   $icons-print-spacing:  $icons-print-spacing, 
+   $icons-print-repeat:   $icons-print-repeat,
+ 
+   $icons-redo-position: $icons-redo-position, 
+   $icons-redo-spacing:  $icons-redo-spacing, 
+   $icons-redo-repeat:   $icons-redo-repeat,
+ 
+   $icons-reload-position: $icons-reload-position, 
+   $icons-reload-spacing:  $icons-reload-spacing, 
+   $icons-reload-repeat:   $icons-reload-repeat,
+ 
+   $icons-search-position: $icons-search-position, 
+   $icons-search-spacing:  $icons-search-spacing, 
+   $icons-search-repeat:   $icons-search-repeat,
+ 
+   $icons-sum-position: $icons-sum-position, 
+   $icons-sum-spacing:  $icons-sum-spacing, 
+   $icons-sum-repeat:   $icons-sum-repeat,
+ 
+   $icons-tip-position: $icons-tip-position, 
+   $icons-tip-spacing:  $icons-tip-spacing, 
+   $icons-tip-repeat:   $icons-tip-repeat,
+ 
+   $icons-undo-position: $icons-undo-position, 
+   $icons-undo-spacing:  $icons-undo-spacing, 
+   $icons-undo-repeat:   $icons-undo-repeat,
+ 
+ $layout   : $icons-layout,
+ $cleanup  : $icons-clean-up,
+ $spacing  : $icons-spacing,
+ $position : $icons-position,
+ $sort-by  : $icons-sort-by
+ );
+
+
+// All sprites should extend this class
+// The icons-sprite mixin will do so for you.
+@if $icons-inline {
+  #{$icons-sprite-base-class} {
+    background-image: inline-sprite($icons-sprites);
+  } 
+} @else {
+  #{$icons-sprite-base-class} {
+    background-image: sprite-url($icons-sprites);
+    background-repeat: no-repeat;
+  }
+}
+//sass functions to return the dimensions of a sprite image as units
+
+  @function icons-sprite-width($name) {
+    @return sprite-width($icons-sprites, $name);
+  }
+
+  @function icons-sprite-height($name) {
+    @return sprite-height($icons-sprites, $name);
+  }
+
+
+// Use this to set the dimensions of an element
+// based on the size of the original image.
+@mixin icons-sprite-dimensions($name) {
+  @include sprite-dimensions($icons-sprites, $name)
+}
+
+// Move the background position to display the sprite.
+@mixin icons-sprite-position($name, $offset-x: 0, $offset-y: 0, $use-percentages: $icons-use-percentages) {
+  @include sprite-background-position($icons-sprites, $name, $offset-x, $offset-y, $use-percentages)
+}
+
+// Extends the sprite base class and set the background position for the desired sprite.
+// It will also apply the image dimensions if $dimensions is true.
+@mixin icons-sprite($name, $dimensions: $icons-sprite-dimensions, $offset-x: 0, $offset-y: 0, $use-percentages: $icons-use-percentages, $separator: $icons-class-separator) {
+  @extend #{$icons-sprite-base-class};
+  @include sprite($icons-sprites, $name, $dimensions, $offset-x, $offset-y, $use-percentages, $separator: $separator);
+}
+
+@mixin icons-sprites($sprite-names, $dimensions: $icons-sprite-dimensions, $prefix: sprite-map-name($icons-sprites), $offset-x: 0, $offset-y: 0, $use-percentages: $icons-use-percentages, $separator: $icons-class-separator) {
+  @include sprites($icons-sprites, $sprite-names, $icons-sprite-base-class, $dimensions, $prefix, $offset-x, $offset-y, $use-percentages, $separator: $separator)
+}
+
+// Generates a class for each sprited image.
+@mixin all-icons-sprites($dimensions: $icons-sprite-dimensions, $prefix: sprite-map-name($icons-sprites), $offset-x: 0, $offset-y: 0, $use-percentages: $icons-use-percentages, $separator: $icons-class-separator) {
+  @include icons-sprites(back cancel clear cut edit_add edit_remove filesave filter help large_chart large_clipart large_picture large_shapes large_smartart lock man mini_add mini_edit mini_refresh more no ok pencil print redo reload search sum tip undo, $dimensions, $prefix, $offset-x, $offset-y, $use-percentages, $separator: $separator);
+}
