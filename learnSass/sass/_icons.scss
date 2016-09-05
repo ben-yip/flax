@@ -2,12 +2,18 @@
 
 @import "compass/utilities/sprites";
 
-$icons-sprite-dimensions: true;
-$disable-magic-sprite-selectors: true;
+//$icons-sprite-dimensions: true;
+//$disable-magic-sprite-selectors: true;
+//$icons-layout: horizontal;
 
-$icons-layout: smart;
+//$icons-repeat: repeat-x;
+//$icons-position: 100%;
+//$icons-clean-up: false;
+
+$icons-sort-by: 'width';
 
 @import "icons/*.png";
+//@import "sprites/icons";
 
 @include all-icons-sprites();
 
