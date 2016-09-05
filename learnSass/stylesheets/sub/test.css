@@ -1,0 +1,5 @@
+/*test if the same folder structure
+  would be generated under css directory */
+.inline-div {
+  display: inline-block;
+}
