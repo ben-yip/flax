@@ -1,6 +1,9 @@
 require 'compass/import-once/activate'
 # Require any additional compass plugins here.
 
+# The environment mode. Defaults to :development, can also be :production
+# environment = :production
+
 # Set this to the root of your project when deployed:
 http_path = "/"
 css_dir = "stylesheets"
@@ -20,10 +23,8 @@ fonts_dir = "fonts"
 relative_assets = true
 
 # To disable debugging comments that display the original location of your selectors. Uncomment:
-line_comments = false
+# line_comments = false
 
-# The environment mode. Defaults to :development, can also be :production
-# environment = :production
 
 # If you prefer the indented syntax, you might want to regenerate this
 # project again passing --syntax sass, or you can uncomment this:
