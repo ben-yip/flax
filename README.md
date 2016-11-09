@@ -15,6 +15,6 @@ As the name explains itself, I wish this project is as versatile as flax.
     - img   
         - holder        占位用的临时图片
     - icon              快捷方式图标、iPad图标等
-    - plugin            第三方插件/组件，每个插件目录下都包含自身的css和js等资源
+    - lib            第三方插件/组件，每个插件目录下都包含自身的css和js等资源
 - assert                存放用于线上访问的静态资源。
 - test                  测试目录
