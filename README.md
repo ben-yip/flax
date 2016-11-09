@@ -18,3 +18,9 @@ As the name explains itself, I wish this project is as versatile as flax.
     - lib            第三方插件/组件，每个插件目录下都包含自身的css和js等资源
 - assert                存放用于线上访问的静态资源。
 - test                  测试目录
+
+
+## 已集成
+- compass
+    - normalize v1.0.3
+    - bootstrap v3.3.7
