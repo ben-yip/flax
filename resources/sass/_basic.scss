@@ -1,0 +1,51 @@
+@charset "UTF-8";
+@import "setting/_variables";
+
+//*==================== fonts ==========================
+@font-face {
+  font-family: 'robotoregular';
+  src: url('../font/roboto-regular/roboto-regular-webfont.eot');
+  src: url('../font/roboto-regular/roboto-regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../font/roboto-regular/roboto-regular-webfont.woff2') format('woff2'),
+  url('../font/roboto-regular/roboto-regular-webfont.woff') format('woff'),
+  url('../font/roboto-regular/roboto-regular-webfont.ttf') format('truetype'),
+  url('../font/roboto-regular/roboto-regular-webfont.svg#robotoregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+//*==================== basic layout ==========================
+
+html, body {
+  min-height: 100vh;
+  background-color: #fff;
+  font-size: 14px;
+  font-family: "robotoregular", "Microsoft YaHei", "Microsoft YaHei UI", "微软雅黑", "Times New Roman", sans-serif;
+}
+
+body {
+  position: relative;
+  min-width: $body-width-min;
+  //overflow-x: hidden;
+}
+
+.container {
+  //width: $body-width-min;
+}
+
+.row {
+  position: relative;
+}
+
+/*============================ common element styles =======================*/
+a {
+  text-decoration: none;
+  color: #717171;
+  transition: all .3s;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #40a1d2;
+  transition: all .3s;
+}
