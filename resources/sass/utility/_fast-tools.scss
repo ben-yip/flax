@@ -1,0 +1,35 @@
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.clear-fix::before,
+.clear-fix::after {
+  display: block;
+  height: 0;
+  line-height: 0;
+  content: '';
+  clear: both;
+}
+
+.clear { /*for those does NOT support ::before*/
+  display: block;
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+
+.text-bold {
+  font-weight: bold !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-center {
+  text-align: center !important;
+}

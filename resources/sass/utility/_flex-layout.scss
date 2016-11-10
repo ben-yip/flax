@@ -1,0 +1,97 @@
+/*------------ flex layout --------------*/
+
+.flex-wpr {
+
+  //默认在垂直和水平方向上居中，提供多个类用以覆盖定位项目方向
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  & > * {
+    display: block;
+  }
+
+  //容器不换行
+  &.nowrap {
+    flex-flow: nowrap;
+  }
+
+  //垂直排列
+  &.column {
+    flex-direction: column;
+  }
+
+  //两端对齐，两个以上子元素时起效
+  &.justified {
+    justify-content: space-between;
+  }
+
+  &.around {
+    justify-content: space-around;
+  }
+
+  &.main-start {
+    justify-content: flex-start;
+  }
+
+  &.main-end {
+    justify-content: flex-end;
+  }
+
+  &.cross-start {
+    align-items: flex-start;
+  }
+
+  &.cross-end {
+    align-items: flex-end;
+  }
+
+  &.cross-start-mul {
+    align-content: flex-start;
+  }
+
+  &.cross-end-mul {
+    align-content: flex-end;
+  }
+
+  &.cross-stretch {
+    align-items: stretch;
+  }
+
+  //todo
+  //    这个是不是应该命名为auto
+  //    使用场景是容器内已经有若干个固定尺寸的项目，
+  //    应用这个类的项目将在容器内剩余的空间中自动缩放。
+  & .flex-fill {
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+
+  //*----------------------！以下未测试 ！---------------------------
+  //*项目的缩放，可应用在容器上设置所有项目，也可应用在单个容器中
+  &.no-shrink > * {
+    flex-shrink: 0;
+  }
+
+  & .no-shrink {
+    flex-shrink: 0;
+  }
+
+  &.no-grow > * {
+    flex-grow: 0;
+  }
+
+  & .no-grow {
+    flex-grow: 0;
+  }
+
+  &.grow-all > * {
+    flex-grow: 1;
+  }
+
+  & .grow-self {
+    flex-grow: 1;
+  }
+}

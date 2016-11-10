@@ -1,0 +1,77 @@
+@import "compass";
+
+/*==================== timeline ========================*/
+
+.timeline {
+  $event-gap: 40px !default; // the vertical gap between events
+  $time-desc-gap: 15px !default;
+
+  $time-width: 110px !default; //the time holder should be given a specific width
+
+  $line-color: #222 !default;
+  $line-weight: 2px !default; //better be a even number so the line place right at the center
+  $dot-width: 10px !default;
+  $dot-center-color: white !default; //the dots are hollow
+
+  position: relative;
+  display: block;
+  width: 100%;
+
+  //a timeline is comprised of many events
+  .event {
+    display: table-row;
+
+    .time, .desc {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    //each event has its own timestamp
+    .time {
+      width: $time-width;
+      text-align: center;
+    }
+
+    //each event has its own description
+    .desc {
+      position: relative;
+      padding: $event-gap/2 $time-desc-gap;
+      text-align: justify;
+
+      //the splitter between timestamp and description
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        //left: -($time-desc-gap + $line-weight / 2);
+        left: -$line-weight / 2;
+
+        width: 0;
+        border-left: solid $line-weight $line-color;
+        z-index: 5;
+      }
+
+      //the circle dot in the splitter
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+
+        width: $dot-width;
+        height: $dot-width;
+        margin-left: -$dot-width/2;
+        margin-top: -$dot-width/2;
+
+        box-sizing: border-box;
+        border: solid $line-weight $line-color;
+        border-radius: 50%;
+        background-color: $dot-center-color;
+        z-index: 10;
+      }
+    }
+  }
+}

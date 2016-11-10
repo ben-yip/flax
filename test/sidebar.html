@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timeline</title>
+    <link rel="stylesheet" href="../resources/css/test.css">
+    <style>
+        aside {
+            display: inline-block;
+            vertical-align: top;
+            margin: 0 15px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+<aside>
+    <h1>basic</h1>
+    <ul class="sidebar">
+        <li><a href="#">Menu Level 1</a></li>
+        <li>
+            <a href="javascript:void(0);">Menu Level 1</a>
+            <ul>
+                <li><a href="#">Menu Level 2</a></li>
+                <li><a href="#">Menu Level 2</a></li>
+                <li><a href="#">Menu Level 2</a></li>
+            </ul>
+        </li>
+        <li><a href="#">normal</a></li>
+        <li><a href="#" class="active">active</a></li>
+        <li><a href="#" class="disabled">disabled</a></li>
+    </ul>
+</aside>
+<aside>
+    <h1>accordion</h1>
+    <ul class="sidebar" data-action="accordion">
+        <li>
+            <a href="javascript:void(0);">Menu Level 1</a>
+            <ul>
+                <li><a href="#">Menu Level 2</a></li>
+                <li><a href="#">Menu Level 2</a></li>
+                <li><a href="#">Menu Level 2</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:void(0);">Menu Level 1</a>
+            <ul class="collapsed">
+                <li><a href="#">Menu Level 2</a></li>
+                <li><a href="#">Menu Level 2</a></li>
+                <li><a href="#">Menu Level 2</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:void(0);">Menu Level 1</a>
+            <ul class="collapsed">
+                <li><a href="#">Menu Level 2</a></li>
+                <li><a href="#">Menu Level 2</a></li>
+                <li><a href="#">Menu Level 2</a></li>
+            </ul>
+        </li>
+    </ul>
+</aside>
+<aside>
+    <h1>dracula</h1>
+    <ul class="sidebar dracula">
+        <li><a href="#">Menu Level 1</a></li>
+        <li>
+            <a href="javascript:void(0);">Menu Level 1</a>
+            <ul>
+                <li><a href="#">Menu Level 2</a></li>
+                <li><a href="#">Menu Level 2</a></li>
+                <li><a href="#">Menu Level 2</a></li>
+            </ul>
+        </li>
+        <li><a href="#">normal</a></li>
+        <li><a href="#" class="active">active</a></li>
+        <li><a href="#" class="disabled">disabled</a></li>
+    </ul>
+</aside>
+<aside>
+    <h1>Navy</h1>
+    <ul class="sidebar navy">
+        <li><a href="#">Menu Level 1</a></li>
+        <li>
+            <a href="javascript:void(0);">Menu Level 1</a>
+            <ul>
+                <li><a href="#">Menu Level 2</a></li>
+                <li><a href="#">Menu Level 2</a></li>
+                <li><a href="#">Menu Level 2</a></li>
+            </ul>
+        </li>
+        <li><a href="#">normal</a></li>
+        <li><a href="#" class="active">active</a></li>
+        <li><a href="#" class="disabled">disabled</a></li>
+    </ul>
+</aside>
+<script src="../resources/javascripts/jquery/jquery-2.1.4.min.js"></script>
+<script src="../resources/javascripts/component/sidebar.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+@import "compass";
+
+// ====== --- a sidebar widget --- ========
+//  - Supports secondary menu;
+//  - Required corresponding sidebar.js
+//      to perform collapse action.
+// =========================================
+
+// --------- layout -------------
+
+@mixin reset-margin-padding {
+  margin: 0;
+  padding: 0;
+}
+
+$menu-padding: 11px 15px !default;
+$sub-menu-padding-left: 30px !default;
+
+// --------- color schemes ---------------
+
+@mixin sidebar(
+  $bg: white,
+  $bg-hover: #e8e8e8,
+  $bg-active: $bg-hover,
+  $bg-disabled: darken($bg, 5%),
+
+  $text-color: #222,
+  $text-color-hover: darken($text-color, 20%),
+  $text-color-active: $text-color-hover,
+  $text-color-disabled: lighten($text-color, 30%),
+
+  $sidebar-border-color: darken($bg, 20%),
+  $divider-color: $sidebar-border-color ) {
+
+  @include no-bullets;
+  border: 1px solid $sidebar-border-color;
+
+  &, * {
+    box-sizing: border-box;
+    @include reset-margin-padding;
+  }
+
+  // general menu items
+  li {
+    border-top: 1px solid $divider-color;
+    &:first-child {
+      margin-top: -1px; //fix the border-top
+    }
+
+    a {
+      display: block;
+      padding: $menu-padding;
+      @include unstyled-link;
+      background-color: $bg;
+      color: $text-color;
+      transition: all .2s;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $bg-hover;
+        color: $text-color-hover;
+        transition: all .2s;
+      }
+      &:focus,
+      &:active, &.active {
+        background-color: $bg-active;
+        color: $text-color-active;
+        transition: all .2s;
+      }
+      &:disabled, &.disabled {
+        background-color: $bg-disabled;
+        color: $text-color-disabled;
+        cursor: not-allowed;
+        transition: all .2s;
+      }
+    }
+
+    // nested menu and items
+    ul {
+      li a {
+        padding-left: $sub-menu-padding-left;
+        font-size: .95em;
+      }
+      &.collapsed {
+        display: none;
+      }
+    }
+  }
+
+}
+
+//--- basic sidebar
+ul.sidebar {
+  @include sidebar;
+}
+
+// ==- other color schemes
+
+ul.sidebar.dracula {
+  $bg: #3c3f41;
+  $bg-hover: #1d1d1e;
+  $bg-active: $bg-hover;
+  $bg-disabled: lighten($bg, 10%);
+
+  $text-color: #fdfdfd;
+  $text-color-hover: lighten($text-color, 10%);
+  $text-color-active: $text-color-hover;
+  $text-color-disabled: darken($text-color, 20%);
+
+  $sidebar-border-color: darken($bg, 10%);
+  $divider-color: lighten($bg, 10%);
+
+  //上面先覆盖变量，这里再传入，有点像形参和实参的意思
+  @include sidebar(
+          $bg: $bg,
+          $bg-hover: $bg-hover,
+          $bg-active: $bg-active,
+          $bg-disabled: $bg-disabled,
+          $text-color: $text-color,
+          $text-color-hover: $text-color-hover,
+          $text-color-active: $text-color-active,
+          $text-color-disabled: $text-color-disabled,
+          $sidebar-border-color: $sidebar-border-color,
+          $divider-color: $divider-color
+  );
+}
+
+ul.sidebar.navy {
+  $bg: #0071c5;
+  $bg-hover: darken($bg, 5%);
+  $bg-active: darken($bg, 10%);
+  $bg-disabled: darken($bg, 5%);
+
+  $text-color: #fdfdfd;
+  $text-color-hover: darken($text-color, 2%);
+  $text-color-active: $text-color-hover;
+  $text-color-disabled: darken($text-color, 15%);
+
+  $sidebar-border-color: darken($bg, 10%);
+  $divider-color: lighten($bg, 5%);
+
+  @include sidebar(
+          $bg: $bg,
+          $bg-hover: $bg-hover,
+          $bg-active: $bg-active,
+          $bg-disabled: $bg-disabled,
+          $text-color: $text-color,
+          $text-color-hover: $text-color-hover,
+          $text-color-active: $text-color-active,
+          $text-color-disabled: $text-color-disabled,
+          $sidebar-border-color: $sidebar-border-color,
+          $divider-color: $divider-color
+  );
+}
