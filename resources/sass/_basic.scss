@@ -26,7 +26,7 @@ html, body {
 body {
   position: relative;
   min-width: $body-width-min;
-  //overflow-x: hidden;
+  //overflow-x: hidden; //一般来说保留横向滚动条
 }
 
 .container {
