@@ -6,23 +6,54 @@ $body-width-min: 1100px !default;
 $header-height: 100px !default;
 $footer-height: 200px !default;
 
-// bootstrap 默认响应式断点：768, 992, 1200
-// 要修改的话，在变量设置的 276 行（Media queries breakpoints）
-
-// bootstrap 的响应式设计很难完全抹除，
-//  如果要完全取消响应式行为，可以把 Media queries breakpoints 分别修改为 1px, 2px, 3px(为了调试方便加以区分)（因为源码使用的是 min-width）
-//  按照覆盖的规则，实际上媒体查询就只剩 lg 下的起效了。
-//  另外 .container 有左右padding，会被嵌套其中的 .row 的负margin 抵消，注意使用 .row 即可。
-//  按照需求固定 .container 的宽度：
-//    注意 .container 的宽度不可大于body的最小宽度，否则会溢出，这里指定相同宽度
+//--------------------------------------------------------
+// 默认响应式断点：768, 992, 1200
+//    要修改的话，在变量设置的 276 行（Media queries breakpoints）
+// 容器宽度分别为：720+30, 940+30, 1140+30
+//    要修改的话，在变量设置的 332 行（Container sizes）
+//--------------------------------------------------------
+//
+// ★如果要完全取消 bootstrap 的响应式行为（仅保留PC端，即宽屏），
+//   可以把sm，md，lg的断点分别修改为 1px, 2px, 3px(为了调试方便加以区分)
+//  （因为源码使用的是 min-width，按照覆盖的规则，实际上媒体查询就只剩 lg 下的起效了。）
+// 然后按照需求在自己的样式中为 .container 设定一个宽度：
+//   注意 .container 的宽度不可大于body的最小宽度，否则会溢出。
+//   一般设计成容器宽度与body最小宽度相同即可：
 $container-width: $body-width-min;
-//这种做法与我平时实现的 .container > .content 通栏设计有（类名）冲突，
-// 如果需要通栏设计，则另外在.container外包裹一层吧。
-// bootstrap 提供的组件中，导航栏是带有通栏设计的，用 .navbar > .container 的结构，.navbar有底色
+// 注意 .container 有左右 padding，会被嵌套其中的 .row 的负margin 抵消，注意
+//
+// bootstrap 的 .container 与我平时实现的 .container > .content 的通栏设计有（类名）冲突，
+//  如果需要通栏设计，则另外在.container外包裹一层吧。
+// （bootstrap 提供的组件中，导航栏是带有通栏设计的，用 .navbar > .container 的结构，.navbar有底色。）
+//
+//-----------------------------------
+// ★如果要保留两段响应式（超窄屛xs 和 PC端），则把sm，md 和 lg 的断点都设置为同样的值，这样就只剩两段响应了。
+//    （xs 默认断点 768px，也可以根据实际情况调整一下）
+//
+// 然后要修改容器的宽度：把 lg 的 container size 设置为所需的PC端下的 container 宽度即可。
+//    （因为源码使用的是 min-width，所以 sm 和 md 的不改也行，会被依次覆盖）
+//
+// 举个栗子：PC端断点规定为 1100px，且PC端下页面主体内容，也即 container 宽度也定为 1100px，输出如下：
+//  @media (min-width: 1100px) {
+//    .container {
+//      width: 750px;
+//    }
+//  }
+//  @media (min-width: 1100px) {
+//    .container {
+//      width: 970px;
+//    }
+//  }
+//  @media (min-width: 1100px) {
+//    .container {
+//      width: 1100px;
+//    }
+//  }
+//--------------------------------------------------------
 
 //===== Colors ==================================
 
-$color-primary: #002145 !default;
+$color-primary: #3071a9 !default;
 
 $color-separator-light: #D7E0E7 !default;
 
