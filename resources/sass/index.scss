@@ -1,9 +1,21 @@
 @charset "UTF-8";
 
 @import "setting/variables";
-
 //bootstrap has already contained normalize.
 //@import "normalize";
 @import "compass";
 @import "basic";
 @import "common";
+
+//图片放在banner内，banner放在一个居中的容器内
+.main-banner {
+  img {
+    display: block;
+    position: relative;
+    left: -($banner-width - $container-width)/2;
+  }
+
+  @media (max-width: $container-width) {
+    overflow: hidden;
+  }
+}
