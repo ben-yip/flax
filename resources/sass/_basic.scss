@@ -27,6 +27,10 @@ body {
   position: relative;
   min-width: $body-width-min;
   //overflow-x: hidden; //一般来说保留横向滚动条
+
+  @media (min-width: $body-width-min) {
+    overflow-x: hidden;
+  }
 }
 
 .container {
