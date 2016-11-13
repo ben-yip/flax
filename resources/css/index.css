@@ -6,7 +6,6 @@
   font-weight: normal;
   font-style: normal;
 }
-/* line 19, ../sass/_basic.scss */
 html, body {
   min-height: 100vh;
   background-color: #fff;
@@ -14,26 +13,22 @@ html, body {
   font-family: "robotoregular", "Microsoft YaHei", "Microsoft YaHei UI", "微软雅黑", "Times New Roman", sans-serif;
 }
 
-/* line 26, ../sass/_basic.scss */
 body {
   position: relative;
   min-width: 1100px;
 }
 
-/* line 36, ../sass/_basic.scss */
 .row {
   position: relative;
 }
 
 /*============================ common element styles =======================*/
-/* line 41, ../sass/_basic.scss */
 a {
   text-decoration: none;
   color: #717171;
   transition: all .3s;
 }
 
-/* line 47, ../sass/_basic.scss */
 a:hover {
   text-decoration: none;
   color: #40a1d2;
