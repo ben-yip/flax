@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+@import "variables";
+
+// 保证页面宽度在小于body最小宽度时（此时产生横向滚动条）通栏容器的背景色不被截断。
+// 因为通栏容器的 width 默认为 100%，所以此时需给定 min-width
+//   为了照顾响应式设计（窄屛时宽度恢复为100%），这里加入媒体查询语句。
+//
+// 其实另一种粗暴点的方法是，通栏容器加背景色，居中的容器也加同样的背景色就看不出来了。
+//
+@mixin keep-fluid-bg {
+  @media (min-width: $mobile-breakpoint) {
+    min-width: $body-width-min;
+  }
+}
+
+// 每个板块都有自己的上下padding，适当留白以防内容过于拥挤。
+// 移动端的留白可以适当小一点。
+@mixin padding-up-down-responsive(
+  $pc-padding-top:30px,
+  $pc-padding-bottom:30px,
+  $mobile-padding-top:20px,
+  $mobile-padding-bottom:20px) {
+
+  padding-top: $pc-padding-top;
+  padding-bottom: $pc-padding-bottom;
+
+  @media(max-width: $mobile-breakpoint) {
+    padding-top: $mobile-padding-top;
+    padding-bottom: $mobile-padding-bottom;
+  }
+}

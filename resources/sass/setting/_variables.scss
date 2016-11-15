@@ -89,7 +89,7 @@ $container-width: $body-width-min;
 //===== Colors ==================================
 
 //主色
-$color-primary: #ff7f00 !default;
+$color-primary: #3d804f !default;
 //主色加深
 $color-primary-dark: darken($color-primary, 5%) !default;
 //主色的补色/反色
@@ -98,8 +98,6 @@ $color-primary-invert: invert($color-primary) !default;
 $color-primary-bg: #222 !default;
 
 //分割线颜色（浅，用于深色背景）（一般为浅色，多数使用半透明效果）
-$color-separator-light: rgba(255, 130, 0, 0.29) !default;
+$color-separator-light: rgba(61, 128, 79, 0.3) !default;
 //分割线颜色（深，用于浅色背景）
 $color-separator-dark: rgba(233, 123, 0, 0.84) !default;
-
-$color-light: #0680A6 !default;

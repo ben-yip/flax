@@ -39,4 +39,50 @@ nav {
 
 //================= FOOTER ========================
 footer {
+  @include keep-fluid-bg;
+  @include padding-up-down-responsive(30px, 15px, 15px, 10px);
+
+  background-color: $color-primary-bg;
+  color: $color-primary;
+
+  .info {
+    .logo {
+      display: block;
+      width: 330px;
+
+      @media (max-width: $mobile-breakpoint) {
+        margin: 0 auto;
+        width: 90%;
+      }
+    }
+  }
+
+  .footer-menu {
+    .menu-group-name {
+      font-size: 1.2em;
+      color: darken($color-primary, 2%);
+    }
+    a {
+      display: block;
+      font-size: .9em;
+      margin-bottom: 5px;
+      color: lighten($color-primary, 10%);
+
+      &:hover {
+        color: darken($color-primary, 5%);
+      }
+    }
+  }
+
+  .copyright {
+    text-align: center;
+
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid $color-separator-light;
+
+    @media (max-width: $mobile-breakpoint) {
+      font-size: .8em;
+    }
+  }
 }

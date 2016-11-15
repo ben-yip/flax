@@ -38,12 +38,12 @@ body {
 /*============================ common element styles =======================*/
 a {
   text-decoration: none;
-  color: #ff7f00;
+  color: #3d804f;
   transition: all .3s;
 }
 a:hover {
   text-decoration: none;
-  color: #e67200;
+  color: #356f44;
   transition: all .3s;
 }
 
@@ -65,5 +65,57 @@ a:hover {
   .main-banner img {
     width: 100%;
     left: 0;
+  }
+}
+
+footer {
+  padding-top: 30px;
+  padding-bottom: 15px;
+  background-color: #222;
+  color: #3d804f;
+}
+@media (min-width: 480px) {
+  footer {
+    min-width: 1100px;
+  }
+}
+@media (max-width: 480px) {
+  footer {
+    padding-top: 15px;
+    padding-bottom: 10px;
+  }
+}
+footer .info .logo {
+  display: block;
+  width: 330px;
+}
+@media (max-width: 480px) {
+  footer .info .logo {
+    margin: 0 auto;
+    width: 90%;
+  }
+}
+footer .footer-menu .menu-group-name {
+  font-size: 1.2em;
+  color: #3a794b;
+}
+footer .footer-menu a {
+  display: block;
+  font-size: .9em;
+  margin-bottom: 5px;
+  color: #4da364;
+}
+footer .footer-menu a:hover {
+  color: #356f44;
+}
+footer .copyright {
+  text-align: center;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(61, 128, 79, 0.3);
+}
+@media (max-width: 480px) {
+  footer .copyright {
+    font-size: .8em;
   }
 }
