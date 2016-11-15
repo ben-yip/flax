@@ -2,16 +2,16 @@
 //===== Scaffolding ==============================
 
 $body-width-min: 1100px !default;
-$xs-breakpoint: 480px !default;
+$mobile-breakpoint: 480px !default;
 $banner-width: 1920px !default;
 
 $header-height: 100px !default;
 $footer-height: 200px !default;
 
 //--------------------------------------------------------
-// 默认响应式断点：768, 992, 1200
+// 默认响应式断点：480, 768, 992, 1200
 //    要修改的话，在变量设置的 276 行（Media queries breakpoints）
-// 容器宽度分别为：720+30, 940+30, 1140+30
+// 容器宽度分别为：100%, 720+30, 940+30, 1140+30
 //    要修改的话，在变量设置的 332 行（Container sizes）
 //
 // 默认情况下输出的样式，可见默认的断点和容器大小如下：
@@ -41,7 +41,9 @@ $footer-height: 200px !default;
 //   注意 .container 的宽度不可大于body的最小宽度，否则会溢出。
 //   【一般设计成 容器宽度 与 body最小宽度 相同即可：】
 $container-width: $body-width-min;
-// 注意 .container 有左右 padding，会被嵌套其中的 .row 的负margin 抵消，注意
+// 注意 .container 有左右 padding，会被嵌套其中的 .row 的负margin 抵消，正确嵌套即可；
+//   不要随便移除 .container 的左右 padding，否则 .row 将超出 .container 的宽度，
+//   如要移除，就不要嵌套 .row
 //
 // bootstrap 的 .container 与我平时实现的 .container > .content 的通栏设计有（类名）冲突，
 //  如果需要通栏设计，则另外在.container外包裹一层吧。
@@ -74,14 +76,30 @@ $container-width: $body-width-min;
 //       }
 //     }
 //
+// ☆ 其实也可以把断点设在一般平板宽度处（768px），这样平板宽度和手机宽度下的视图一样。
+//    具体操作，就是把原来的 xs 断点设为 768px，然后 sm，md 和 lg 还是使用 xs 的断点值。
+//
+// ☆ 实际上，上面关于完全取消响应式设计的方案也可以基于这种保留两段响应式的思路，
+//    要抹除移动端的窄屛响应时，只需把移动端断点设置为 0。
+//    △见 _basic.scss：.container 的宽度已做好适配，上面调整bootstrap源码中 .container 宽度的步骤也可以省略了。
+//
 // 注意：要使用这种设计时，不要像纯PC应用那样给body使用 min-width 属性了。
 //--------------------------------------------------------
 
 //===== Colors ==================================
 
-$color-primary: #428bca !default;
+//主色
+$color-primary: #ff7f00 !default;
+//主色加深
+$color-primary-dark: darken($color-primary, 5%) !default;
+//主色的补色/反色
+$color-primary-invert: invert($color-primary) !default;
+//可作为主色的背景色
+$color-primary-bg: #222 !default;
 
-$color-separator-light: #D7E0E7 !default;
+//分割线颜色（浅，用于深色背景）（一般为浅色，多数使用半透明效果）
+$color-separator-light: rgba(255, 130, 0, 0.29) !default;
+//分割线颜色（深，用于浅色背景）
+$color-separator-dark: rgba(233, 123, 0, 0.84) !default;
 
-$color-dark: darken($color-primary, 20%) !default;
 $color-light: #0680A6 !default;

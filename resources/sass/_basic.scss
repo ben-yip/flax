@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import "setting/_variables";
+@import "setting/variables";
 
 //*==================== fonts ==========================
 @font-face {
@@ -17,39 +17,64 @@
 //*==================== basic layout ==========================
 
 html, body {
-  min-height: 100vh;
+  min-height: 100%;
   background-color: #fff;
   font-size: 14px;
   font-family: "robotoregular", "Microsoft YaHei", "Microsoft YaHei UI", "微软雅黑", "Times New Roman", sans-serif;
 }
 
 body {
+  //方便某些 body 下的直接子元素定位
   position: relative;
-  min-width: $body-width-min;
-  //overflow-x: hidden; //一般来说保留横向滚动条
 
+  //当设计：body 最小宽度 == .container 宽度 时，
+  //  body会被 .container 撑开宽度，所以无需设置 min-width
+  //
+  //当设计：body 最小宽度 ＞ .container 宽度 时，
+  //  body 的 min-width 就要给出，而且还要考虑响应式的情况。
+  //  其实这样设计没什么必要，就让它们相等就好了嘛。
+  //
+  //min-width: $body-width-min;
+  //-------------------------------------------------
+
+  //一般来说，当 客户端窗口宽度 ＜ 设计的页面主宽度 时，
+  //  会保留横向滚动条，使得所有内容可访问，因此不使用 overflow-x: hidden;
+  //
+  //而当 客户端窗口宽度 ＞ 设计的页面主宽度 时，
+  //  为了隐藏如通栏banner模块右侧超出的部分，把
   @media (min-width: $body-width-min) {
     overflow-x: hidden;
   }
+  //若启用移动端响应式，当 客户端窗口宽度 ＜ 移动端断点 时，
+  //  所有容器宽度采用 100%，不用关心是否需要隐藏溢出的问题。
+  //-------------------------------------------------
 }
 
+//此处覆盖 bootstrap 的容器宽度设定
 .container {
-  //width: $body-width-min;
+  //正常情况下把容器固定为设定的宽度
+  width: $container-width !important;
+
+  //若启用移动端响应式，则显示覆盖最大宽度为 100%
+  @media (max-width: $mobile-breakpoint) {
+    max-width: 100%;
+  }
 }
 
 .row {
+  //使子元素的定位相对于 .row
   position: relative;
 }
 
 /*============================ common element styles =======================*/
 a {
   text-decoration: none;
-  color: #717171;
+  color: $color-primary;
   transition: all .3s;
-}
 
-a:hover {
-  text-decoration: none;
-  color: #40a1d2;
-  transition: all .3s;
+  &:hover {
+    text-decoration: none;
+    color: $color-primary-dark;
+    transition: all .3s;
+  }
 }

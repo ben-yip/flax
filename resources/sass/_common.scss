@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
-@import "setting/_variables";
+@import "setting/variables";
+@import "setting/mixins";
 @import "compass/layout";
 @import "compass";
 
@@ -10,6 +11,30 @@ header {
 
 //================= NAVIGATION ========================
 nav {
+}
+
+//================= BANNER ========================
+
+//该 .main-banner 还应该同时是一个居中的 .container
+// 这里直接在HTML中使用 bootstrap 的 .container
+.main-banner {
+  padding: 0;
+
+  @media (max-width: $container-width) {
+    overflow: hidden;
+  }
+
+  img {
+    display: block;
+    position: relative;
+    left: -($banner-width - $container-width)/2;
+    width: $banner-width;
+
+    @media (max-width: $mobile-breakpoint) {
+      width: 100%;
+      left: 0;
+    }
+  }
 }
 
 //================= FOOTER ========================

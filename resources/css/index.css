@@ -7,7 +7,7 @@
   font-style: normal;
 }
 html, body {
-  min-height: 100vh;
+  min-height: 100%;
   background-color: #fff;
   font-size: 14px;
   font-family: "robotoregular", "Microsoft YaHei", "Microsoft YaHei UI", "微软雅黑", "Times New Roman", sans-serif;
@@ -15,7 +15,20 @@ html, body {
 
 body {
   position: relative;
-  min-width: 1100px;
+}
+@media (min-width: 1100px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
+.container {
+  width: 1100px !important;
+}
+@media (max-width: 480px) {
+  .container {
+    max-width: 100%;
+  }
 }
 
 .row {
@@ -25,12 +38,32 @@ body {
 /*============================ common element styles =======================*/
 a {
   text-decoration: none;
-  color: #717171;
+  color: #ff7f00;
+  transition: all .3s;
+}
+a:hover {
+  text-decoration: none;
+  color: #e67200;
   transition: all .3s;
 }
 
-a:hover {
-  text-decoration: none;
-  color: #40a1d2;
-  transition: all .3s;
+.main-banner {
+  padding: 0;
+}
+@media (max-width: 1100px) {
+  .main-banner {
+    overflow: hidden;
+  }
+}
+.main-banner img {
+  display: block;
+  position: relative;
+  left: -410px;
+  width: 1920px;
+}
+@media (max-width: 480px) {
+  .main-banner img {
+    width: 100%;
+    left: 0;
+  }
 }
