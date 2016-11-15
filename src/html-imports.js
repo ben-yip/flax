@@ -1,6 +1,27 @@
 /**
  * Created by BenYip on 10/11/2016.
  *
+ *  todo 待完善功能：
+ *  - 对 <link rel="import"> 语句的正则搜索健壮性增强
+ *  - 被包含的文件不存在时，要抓取访问错误，并在控制台给予提示
+ *  - 支持递归遍历目录
+ *  - 支持外部文件配置
+ *  - 作为 NPM 包发布
+ *  - 要正式成为 CLI 工具，可借助第三方库：https://github.com/tj/commander.js
+ *      还有其他功能类似的库，参考：http://stackoverflow.com/questions/4351521/how-do-i-pass-command-line-arguments-to-node-js
+ *
+ * ========================
+ * - v0.2
+ * - 2016-11-15 21:04:16
+ * ========================
+ *  改变配置方式：参数可在命令行中传入：
+ *      第一个参数为源目录，默认为 .\pagesrc
+ *      第二个参数为输出目录，默认为 .\page
+ *  应在项目根目录直接执行 node .\src\html-imports.js
+ *  注意与执行目录的位置关系即可。
+ *
+ *  这样一来改参数就不用动源码了，以后会打造成正式的命令行工具。
+ *
  * ========================
  * - v0.1
  * - 2016-10-12 15:39:59
@@ -8,14 +29,6 @@
  *  模拟 HTML Imports ：
  *      对出现 <link rel="import" href="fragment.html"> 的地方替换为对应的文件内容。
  *
- * 注意事项：
- *      必须把 IDE 中 "safe write" 功能取消，临时文件会引起错误。
- *
- *  待增强：
- *  - 被包含的文件不存在时，要抓取访问错误，并在控制台给予提示。
- *  - 支持递归遍历目录
- *  - 支持外部文件配置
- *  - 作为 NPM 包发布
  */
 
 const fs = require('fs');
@@ -32,10 +45,10 @@ var config = {
     debug: false
 
     //源文件目录
-    , src: '../pagesrc'
+    , src: process.argv[2] || './pagesrc'
 
     //输出文件目录
-    , dest: '../page'
+    , dest: process.argv[3] || './page'
 
     // 需要重新构建填充内容的HTML文件
     // , files: [
@@ -153,10 +166,10 @@ var build = function () {
             // }
 
             /*
-            * todo
-            *   应按照合理的逻辑执行默认的过滤，
-            *   而且过滤可以通过配置定制
-            */
+             * todo
+             *   应按照合理的逻辑执行默认的过滤，
+             *   而且过滤可以通过配置定制
+             */
 
             //把目录等排除，只保留文件 todo 要做遍历功能的话，这一步就不能要了
             files = files.filter(function (file) {
@@ -196,7 +209,7 @@ var build = function () {
         if (Array.isArray(config.files)) {
             config.files.forEach(function (file) {
                 importHtmlFrag(config.src, config.dest, file);
-            })
+            });
         }
     }
 };
