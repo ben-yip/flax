@@ -48,6 +48,7 @@ body {
   //若启用移动端响应式，当 客户端窗口宽度 ＜ 移动端断点 时，
   //  所有容器宽度采用 100%，一般情况下不用关心是否需要隐藏溢出的问题。
   //  不过为了以防某些板块，如 banner 会使用到左右的负 margin 强制变宽这种行为，
+  // (todo 这种做法可用于PC端浏览器，但是移动端浏览器还是会溢出，解决方法是： 使用了 overflow hidden 的 banner container -> 使用了左右负margin的图片wrapper -> 图片)
   //  这里也为 body 加上防溢出。
   @media (max-width: $mobile-breakpoint) {
     overflow-x: hidden;
