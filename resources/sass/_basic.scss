@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import "setting/variables";
+@import "compass";
 
 //*==================== fonts ==========================
 @font-face {
@@ -82,12 +83,12 @@ body {
 
 /*============================ common element styles =======================*/
 a {
-  text-decoration: none;
+  @include unstyled-link;
   color: $color-primary;
   transition: all .3s;
 
   &:hover {
-    text-decoration: none;
+    @include unstyled-link;
     color: $color-primary-dark;
     transition: all .3s;
     cursor: pointer;
