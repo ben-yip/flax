@@ -22,6 +22,10 @@ html, body {
   background-color: #fff;
   font-size: 14px;
   font-family: "robotoregular", "Microsoft YaHei", "Microsoft YaHei UI", "微软雅黑", "Times New Roman", sans-serif;
+
+  @media (max-width: $mobile-breakpoint) {
+    font-size: 12px;
+  }
 }
 
 body {
